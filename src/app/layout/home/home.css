@@ -1,0 +1,123 @@
+.hero-section {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  padding: 64px 0;
+  background-color: var(--bg-color, #121212);
+  color: var(--text-color, #ffffff);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.eyebrow {
+  display: inline-block;
+  width: fit-content;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-color, #da291c);
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.12;
+  font-weight: 800;
+  color: var(--text-color, #ffffff);
+}
+
+.hero-text p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 560px;
+  color: var(--muted-text-color, #9ca3af);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.btn-primary,
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color, #da291c);
+  color: #ffffff;
+  border: 1px solid var(--primary-color, #da291c);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-color, #ffffff);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary-color, #da291c);
+  color: var(--primary-color, #da291c);
+  transform: translateY(-2px);
+}
+
+.hero-media {
+  background-color: var(--card-color, #1c1c1c);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-media img {
+    height: 280px;
+  }
+}

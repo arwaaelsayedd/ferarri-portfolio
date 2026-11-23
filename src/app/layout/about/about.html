@@ -1,0 +1,15 @@
+<!-- about.html -->
+<section class="about-section" *ngIf="aboutService.about$ | async as about">
+  <div class="container about-grid">
+    <div class="about-image" *ngIf="about.image">
+      <img [src]="about.image" [alt]="about.title" />
+      <span class="badge">{{ about.badgeYears }}</span>
+    </div>
+
+    <div class="about-content">
+      <span class="eyebrow">{{ about.eyebrow }}</span>
+      <h2>{{ about.title }}</h2>
+      <p>{{ about.description }}</p>
+    </div>
+  </div>
+</section>

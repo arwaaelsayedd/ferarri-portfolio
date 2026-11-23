@@ -1,0 +1,27 @@
+<!-- contact.html -->
+<section class="contact-section">
+  <div class="container contact-grid">
+    <div class="contact-info" *ngIf="contactService.contact$ | async as contact">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> {{ contact.address }}</p>
+      <p><strong>Phone:</strong> {{ contact.phone }}</p>
+      <p><strong>Email:</strong> {{ contact.email }}</p>
+    </div>
+
+    <form class="contact-form" (ngSubmit)="onSubmit()">
+      <h3>Send a Message</h3>
+
+      <input type="text" name="name" [(ngModel)]="formData.name" placeholder="Your Name *" required />
+      <input type="email" name="email" [(ngModel)]="formData.email" placeholder="Your Email *" required />
+      <input type="text" name="subject" [(ngModel)]="formData.subject" placeholder="Subject" />
+      <textarea name="message" rows="5" [(ngModel)]="formData.message" placeholder="Your Message *" required></textarea>
+
+      <button type="submit" class="btn-primary" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+      </button>
+
+      <p class="success-text" *ngIf="successMsg">{{ successMsg }}</p>
+      <p class="error-text" *ngIf="errorMsg">{{ errorMsg }}</p>
+    </form>
+  </div>
+</section>

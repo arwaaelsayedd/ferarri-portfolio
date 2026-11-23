@@ -1,0 +1,15 @@
+<!-- our-clients.html -->
+<section class="clients-section">
+  <div class="container">
+    <h2 class="section-title">Our Clients</h2>
+
+    <div class="cards-grid" *ngIf="clientsService.clients$ | async as clients">
+      <div class="card client-card" *ngFor="let client of clients">
+        <img *ngIf="client.image" [src]="client.image" [alt]="client.name" class="client-avatar" />
+        <p class="quote">"{{ client.quote }}"</p>
+        <h4>{{ client.name }}</h4>
+        <span class="role">{{ client.role }}</span>
+      </div>
+    </div>
+  </div>
+</section>

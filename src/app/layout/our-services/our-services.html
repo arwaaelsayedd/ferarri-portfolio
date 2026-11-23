@@ -1,0 +1,17 @@
+
+<!-- our-services.html -->
+<section class="services-section">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="cards-grid" *ngIf="servicesService.services$ | async as services">
+      <div class="card" *ngFor="let item of services">
+        <div class="card-icon" *ngIf="item.icon">
+          <img [src]="item.icon" [alt]="item.title" />
+        </div>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
