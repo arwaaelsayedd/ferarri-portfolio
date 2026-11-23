@@ -1,0 +1,11 @@
+.dashboard-shell {
+  min-height: 100vh;
+  background-color: var(--bg-color, #121212);
+  color: var(--text-color, #ffffff);
+}
+
+.dashboard-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}

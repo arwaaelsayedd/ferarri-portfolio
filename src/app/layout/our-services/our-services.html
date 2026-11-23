@@ -1,17 +1,16 @@
+<section id="services" class="services-section">
+  <div class="services-container">
+    <div class="section-header">
+      <span class="section-eyebrow">Bespoke Offerings</span>
+      <h2 class="section-title">OUR SERVICES</h2>
+    </div>
 
-<!-- our-services.html -->
-<section class="services-section">
-  <div class="container">
-    <h2 class="section-title">Our Services</h2>
-
-    <div class="cards-grid" *ngIf="servicesService.services$ | async as services">
-      <div class="card" *ngFor="let item of services">
-        <div class="card-icon" *ngIf="item.icon">
-          <img [src]="item.icon" [alt]="item.title" />
-        </div>
-        <h3>{{ item.title }}</h3>
-        <p>{{ item.description }}</p>
-      </div>
+    <div class="services-grid">
+      <article class="service-card" *ngFor="let service of services; let i = index">
+        <span class="service-index">0{{ i + 1 }}</span>
+        <h3 class="service-title">{{ service.title }}</h3>
+        <p class="service-description">{{ service.description }}</p>
+      </article>
     </div>
   </div>
 </section>

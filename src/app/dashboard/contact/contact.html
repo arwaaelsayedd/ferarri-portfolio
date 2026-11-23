@@ -1,1 +1,17 @@
-<p>contact works!</p>
+<div class="dash-page">
+  <h2 class="dash-title">Dashboard — Contact Info</h2>
+  <p class="dash-status" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <form class="dash-card" (ngSubmit)="saveContact()">
+    <label>Showroom Address</label>
+    <input type="text" name="address" [(ngModel)]="contactData.address" />
+
+    <label>Phone Number</label>
+    <input type="text" name="phone" [(ngModel)]="contactData.phone" />
+
+    <label>Email Address</label>
+    <input type="email" name="email" [(ngModel)]="contactData.email" />
+
+    <button type="submit" class="save-btn">Save Contact Info</button>
+  </form>
+</div>

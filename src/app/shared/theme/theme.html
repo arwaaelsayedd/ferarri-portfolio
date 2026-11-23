@@ -1,1 +1,21 @@
-<p>theme works!</p>
+<form class="theme-card" (ngSubmit)="saveTheme()">
+  <h3>Theme Colors</h3>
+  <p class="status-msg" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <label>Primary Accent Color</label>
+  <input type="color" name="primaryColor" [(ngModel)]="themeData.primaryColor" />
+
+  <label>Background Color</label>
+  <input type="color" name="backgroundColor" [(ngModel)]="themeData.backgroundColor" />
+
+  <label>Card Color</label>
+  <input type="color" name="cardColor" [(ngModel)]="themeData.cardColor" />
+
+  <label>Primary Text Color</label>
+  <input type="color" name="textColor" [(ngModel)]="themeData.textColor" />
+
+  <label>Muted Text Color</label>
+  <input type="color" name="mutedTextColor" [(ngModel)]="themeData.mutedTextColor" />
+
+  <button type="submit" class="save-btn">Save Theme</button>
+</form>

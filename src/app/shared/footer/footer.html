@@ -1,17 +1,30 @@
-<!-- footer.html -->
 <footer class="site-footer">
-  <div class="container footer-grid">
-    <div *ngIf="homeService.home$ | async as home">
-      <h4>{{ home.title }}</h4>
-      <p>{{ home.subtitle }}</p>
+  <div class="footer-container">
+    <div class="footer-brand">
+      <span class="footer-logo">MARANELLO ATELIER</span>
+      <p class="footer-tagline">
+        Bespoke automotive craftsmanship, performance heritage, and private showroom care.
+      </p>
     </div>
 
-    <div *ngIf="contactService.contact$ | async as contact">
-      <p>{{ contact.address }}</p>
-      <p>{{ contact.phone }} | {{ contact.email }}</p>
+    <div class="footer-links">
+      <h4>Navigation</h4>
+      <a routerLink="/home">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/services">Our Services</a>
+      <a routerLink="/clients">Our Clients</a>
+      <a routerLink="/contact">Contact Us</a>
+    </div>
+
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>{{ contactInfo.address }}</p>
+      <p>{{ contactInfo.phone }}</p>
+      <p>{{ contactInfo.email }}</p>
     </div>
   </div>
+
   <div class="footer-bottom">
-    <p>© {{ currentYear }} All Rights Reserved.</p>
+    <span>© 2026 Maranello Atelier. All rights reserved.</span>
   </div>
 </footer>

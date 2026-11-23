@@ -1,1 +1,13 @@
-<p>home works!</p>
+<section class="hero-section" [style.backgroundImage]="homeData.heroImage ? 'url(' + homeData.heroImage + ')' : ''">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">{{ homeData.eyebrow }}</span>
+    <h1 class="hero-title">{{ homeData.title }}</h1>
+    <p class="hero-subtitle">{{ homeData.subtitle }}</p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#about" class="btn-outline">Discover Heritage</a>
+    </div>
+  </div>
+</section>
+

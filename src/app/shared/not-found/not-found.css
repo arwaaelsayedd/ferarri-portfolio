@@ -1,0 +1,52 @@
+.not-found-page {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: var(--bg-color, #121212);
+  color: var(--text-color, #ffffff);
+  text-align: center;
+}
+
+.not-found-box {
+  max-width: 480px;
+  background-color: var(--card-color, #1c1c1c);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 48px 32px;
+}
+
+.error-code {
+  display: block;
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--primary-color, #da291c);
+  margin-bottom: 12px;
+}
+
+.error-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.error-desc {
+  color: var(--muted-text-color, #9ca3af);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 28px;
+}
+
+.home-btn {
+  display: inline-block;
+  background-color: var(--primary-color, #da291c);
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}

@@ -1,1 +1,50 @@
-<p>home works!</p>
+<div class="dash-page">
+  <h2 class="dash-title">Dashboard — Home &amp; Theme</h2>
+  <p class="dash-status" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <div class="dash-grid">
+    <!-- Home Content Form -->
+    <form class="dash-card" (ngSubmit)="saveHome()">
+      <h3>Home Content &amp; Logo</h3>
+
+      <label>Eyebrow Text</label>
+      <input type="text" name="eyebrow" [(ngModel)]="homeData.eyebrow" />
+
+      <label>Hero Title</label>
+      <input type="text" name="title" [(ngModel)]="homeData.title" />
+
+      <label>Hero Subtitle</label>
+      <textarea name="subtitle" rows="3" [(ngModel)]="homeData.subtitle"></textarea>
+
+      <label>Logo Image URL</label>
+      <input type="text" name="logoUrl" [(ngModel)]="homeData.logoUrl" placeholder="http://localhost:5000/uploads/logo.png" />
+
+      <label>Hero Background Image URL</label>
+      <input type="text" name="heroImage" [(ngModel)]="homeData.heroImage" placeholder="https://..." />
+
+      <button type="submit" class="save-btn">Save Home</button>
+    </form>
+
+    <!-- Theme Colors Form -->
+    <form class="dash-card" (ngSubmit)="saveTheme()">
+      <h3>Theme &amp; Background Colors</h3>
+
+      <label>Primary Accent Color</label>
+      <input type="color" name="primaryColor" [(ngModel)]="themeData.primaryColor" />
+
+      <label>Background Color</label>
+      <input type="color" name="backgroundColor" [(ngModel)]="themeData.backgroundColor" />
+
+      <label>Card Color</label>
+      <input type="color" name="cardColor" [(ngModel)]="themeData.cardColor" />
+
+      <label>Primary Text Color</label>
+      <input type="color" name="textColor" [(ngModel)]="themeData.textColor" />
+
+      <label>Muted Text Color</label>
+      <input type="color" name="mutedTextColor" [(ngModel)]="themeData.mutedTextColor" />
+
+      <button type="submit" class="save-btn">Save Theme</button>
+    </form>
+  </div>
+</div>

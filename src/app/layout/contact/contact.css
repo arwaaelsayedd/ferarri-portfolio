@@ -1,0 +1,108 @@
+.contact-section {
+  padding: 96px 6%;
+  background-color: var(--bg-color, #121212);
+  color: var(--text-color, #ffffff);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 48px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  color: var(--primary-color, #da291c);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.contact-lead {
+  color: var(--muted-text-color, #9ca3af);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-text-color, #9ca3af);
+}
+
+.info-value {
+  font-size: 0.95rem;
+}
+
+.contact-form {
+  background-color: var(--card-color, #1c1c1c);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted-text-color, #9ca3af);
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  background-color: var(--bg-color, #121212);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-color, #ffffff);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color, #da291c);
+}
+
+.submit-btn {
+  background-color: var(--primary-color, #da291c);
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.success-msg {
+  color: #4ade80;
+  font-size: 0.875rem;
+  margin: 0;
+}

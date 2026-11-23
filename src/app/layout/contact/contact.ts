@@ -1,12 +1,46 @@
-import { Component } from '@angular/core';
+import { ContactService } from './../../core/services/contact/contact';
+import { ContactModel } from './../../core/models/contact';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, FormsModule],
   templateUrl: './contact.html',
   styleUrl: './contact.css'
 })
-export class Contact {
+export class Contact implements OnInit {
+  contactInfo: ContactModel = {
+    address: 'Via Abetone Inferiore 4, Maranello',
+    phone: '+20 2 3539 0000',
+    email: 'concierge@maranello-atelier.com'
+  };
 
+  formData = {
+    name: '',
+    email: '',
+    message: ''
+  };
+
+  submitted = false;
+
+  constructor(private ContactService: ContactService) {}
+
+  ngOnInit(): void {
+    this.ContactService.getContact().subscribe({
+      next: (data) => {
+        if (data) {
+          this.contactInfo = { ...this.contactInfo, ...data };
+        }
+      },
+      error: (err) => console.error('Error loading contact info:', err)
+    });
+  }
+
+  onSubmit(): void {
+    this.submitted = true;
+    this.formData = { name: '', email: '', message: '' };
+  }
 }

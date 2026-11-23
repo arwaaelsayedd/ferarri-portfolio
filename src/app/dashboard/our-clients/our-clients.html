@@ -1,1 +1,40 @@
-<p>our-clients works!</p>
+<div class="dash-page">
+  <h2 class="dash-title">Dashboard — Our Clients</h2>
+  <p class="dash-status" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <div class="dash-layout">
+    <form class="dash-card" (ngSubmit)="saveClient()">
+      <h3>{{ editingId ? 'Edit Client' : 'Add New Client' }}</h3>
+
+      <label>Client Name</label>
+      <input type="text" name="name" [(ngModel)]="formClient.name" required placeholder="Client name" />
+
+      <label>Vehicle / Role</label>
+      <input type="text" name="role" [(ngModel)]="formClient.role" placeholder="e.g. SF90 Stradale Owner" />
+
+      <label>Testimonial / Quote</label>
+      <textarea name="quote" rows="4" [(ngModel)]="formClient.quote" required placeholder="Client quote..."></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="save-btn">
+          {{ editingId ? 'Update Client' : 'Add Client' }}
+        </button>
+        <button type="button" class="cancel-btn" *ngIf="editingId" (click)="resetForm()">Cancel</button>
+      </div>
+    </form>
+
+    <div class="items-list">
+      <div class="item-card" *ngFor="let client of clients">
+        <div>
+          <h4>{{ client.name }}</h4>
+          <span class="client-sub" *ngIf="client.role">{{ client.role }}</span>
+          <p>“{{ client.quote }}”</p>
+        </div>
+        <div class="item-actions">
+          <button type="button" class="edit-btn" (click)="editClient(client)">Edit</button>
+          <button type="button" class="delete-btn" (click)="deleteClient(client._id )">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

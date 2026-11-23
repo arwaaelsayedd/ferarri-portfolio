@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
-  imports: [],
   selector: 'app-dashboard-header',
-  styleUrl: './dashboard-header.css',
-  templateUrl: './dashboard-header.html',
+  standalone: true,
+  imports: [CommonModule, RouterLink, RouterLinkActive],
+  templateUrl:  './dashboard-header.html',
+  styleUrl:  './dashboard-header.css'
 })
 export class DashboardHeader {}

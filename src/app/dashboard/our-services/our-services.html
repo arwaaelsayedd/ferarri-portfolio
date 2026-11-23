@@ -1,1 +1,36 @@
-<p>our-services works!</p>
+<div class="dash-page">
+  <h2 class="dash-title">Dashboard — Our Services</h2>
+  <p class="dash-status" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <div class="dash-layout">
+    <form class="dash-card" (ngSubmit)="saveService()">
+      <h3>{{ editingId ? 'Edit Service' : 'Add New Service' }}</h3>
+
+      <label>Service Title</label>
+      <input type="text" name="title" [(ngModel)]="formService.title" required placeholder="e.g. Atelier Configuration" />
+
+      <label>Description</label>
+      <textarea name="description" rows="4" [(ngModel)]="formService.description" required placeholder="Service details..."></textarea>
+
+      <div class="form-actions">
+        <button type="submit" class="save-btn">
+          {{ editingId ? 'Update Service' : 'Add Service' }}
+        </button>
+        <button type="button" class="cancel-btn" *ngIf="editingId" (click)="resetForm()">Cancel</button>
+      </div>
+    </form>
+
+    <div class="items-list">
+      <div class="item-card" *ngFor="let service of services">
+        <div>
+          <h4>{{ service.title }}</h4>
+          <p>{{ service.description }}</p>
+        </div>
+        <div class="item-actions">
+          <button type="button" class="edit-btn" (click)="editService(service)">Edit</button>
+          <button type="button" class="delete-btn" (click)="deleteService(service._id )">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

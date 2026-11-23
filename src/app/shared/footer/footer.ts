@@ -1,30 +1,33 @@
+import { ContactService } from './../../core/services/contact/contact';
+import { ContactModel } from './../../core/models/contact';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeService } from '../core/services/home.service';
-import { ContactService } from '../../core/services/contact.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './footer.html',
   styleUrl: './footer.css'
 })
 export class Footer implements OnInit {
-  currentYear = new Date().getFullYear();
+  contactInfo: ContactModel = {
+    address: 'Via Abetone Inferiore 4, Maranello',
+    phone: '+20 2 3539 0000',
+    email: 'concierge@maranello-atelier.com'
+  };
 
-  constructor(
-    public homeService: HomeService,
-    public contactService: ContactService
-  ) {}
+  constructor(private ContactService: ContactService) {}
 
   ngOnInit(): void {
-    const homeSub = this.homeService.loadHome().subscribe({
-      error: () => {}
-    });
-
-    const contactSub = this.contactService.loadContact().subscribe({
-      error: () => {}
+    this.ContactService.getContact().subscribe({
+      next: (data) => {
+        if (data) {
+          this.contactInfo = { ...this.contactInfo, ...data };
+        }
+      },
+      error: (err) => console.error('Error loading footer contact info:', err)
     });
   }
 }

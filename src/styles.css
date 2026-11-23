@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add gl:root {
+  --primary-color: #da291c;
+  --bg-color: #121212;
+  --card-color: #1c1c1c;
+  --text-color: #ffffff;
+  --muted-text-color: #9ca3af;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  scroll-behavior: smooth;
+}obal styles to this file, and also import other style files */

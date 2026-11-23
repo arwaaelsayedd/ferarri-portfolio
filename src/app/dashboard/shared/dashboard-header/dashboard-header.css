@@ -1,0 +1,77 @@
+.dash-header {
+  background-color: var(--card-color, #1c1c1c);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.dash-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.dash-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dash-badge {
+  background-color: var(--primary-color, #da291c);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  padding: 4px 8px;
+}
+
+.dash-brand-name {
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--text-color, #ffffff);
+}
+
+.dash-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dash-nav a {
+  color: var(--muted-text-color, #9ca3af);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  transition: color 0.2s ease;
+}
+
+.dash-nav a:hover,
+.dash-nav a.active {
+  color: var(--primary-color, #da291c);
+}
+
+.back-site-btn {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: var(--text-color, #ffffff);
+  text-decoration: none;
+  padding: 8px 14px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.back-site-btn:hover {
+  border-color: var(--primary-color, #da291c);
+}

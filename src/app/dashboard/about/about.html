@@ -1,1 +1,23 @@
-<p>about works!</p>
+<div class="dash-page">
+  <h2 class="dash-title">Dashboard — About</h2>
+  <p class="dash-status" *ngIf="statusMessage">{{ statusMessage }}</p>
+
+  <form class="dash-card" (ngSubmit)="saveAbout()">
+    <label>Eyebrow</label>
+    <input type="text" name="eyebrow" [(ngModel)]="aboutData.eyebrow" />
+
+    <label>Title</label>
+    <input type="text" name="title" [(ngModel)]="aboutData.title" />
+
+    <label>Description</label>
+    <textarea name="description" rows="4" [(ngModel)]="aboutData.description"></textarea>
+
+    <label>Image URL</label>
+    <input type="text" name="image" [(ngModel)]="aboutData.image" />
+
+    <label>Badge Years</label>
+    <input type="text" name="badgeYears" [(ngModel)]="aboutData.badgeYears" />
+
+    <button type="submit" class="save-btn">Save About</button>
+  </form>
+</div>
